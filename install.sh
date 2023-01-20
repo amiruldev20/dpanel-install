@@ -79,7 +79,7 @@ bash <(curl -s https://raw.githubusercontent.com/Ferks-FK/Pterodactyl-AutoThemes
 }
 
 Dpanel() {
-bash <(curl -s https://raw.githubusercontent.com/amiruldev20/dxz/build.sh)
+bash <(curl -s https://raw.githubusercontent.com/amiruldev20/dpanel-install/build.sh)
 }
 
 
