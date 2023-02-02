@@ -46,11 +46,12 @@ exit 1
 done=false
 
 echo
-print_brake 50
+print_brake 30
 echo -e "${g}CR DPANEL INSTALLER"
 echo
 echo -e "${y}Beta Version"
-
+print_brake 30
+echo
 Backup() {
 bash <(curl -s https://raw.githubusercontent.com/Ferks-FK/Pterodactyl-AutoThemes/"${SCRIPT_VERSION}"/backup.sh)
 }
