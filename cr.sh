@@ -1,19 +1,5 @@
 #!/bin/bash
 
-set -e
-
-# Get the latest version before running the script #
-get_release() {
-curl --silent \
-  -H "Accept: application/vnd.github.v3+json" \
-  https://api.github.com/repos/amiruldev20/dpanel-install/releases/latest |
-  grep '"tag_name":' |
-  sed -E 's/.*"([^"]+)".*/\1/'
-}
-
-GITHUB_STATUS_URL="https://www.githubstatus.com"
-SCRIPT_VERSION="$(get_release)"
-
 # Visual Functions #
 print_brake() {
   for ((n = 0; n < $1; n++)); do
@@ -35,20 +21,6 @@ error() {
   echo -e "* ${RED}ERROR${RESET}: $1"
   echo ""
 }
-
-# Check Sudo #
-if [[ $EUID -ne 0 ]]; then
-  echo "* This script must be executed with root privileges (sudo)." 1>&2
-  exit 1
-fi
-
-# Check Git #
-if [ -z "$SCRIPT_VERSION" ]; then
-  error "Could not get the version of the script using GitHub."
-  echo "* Please check on the site below if the 'API Requests' are as normal status."
-  echo -e "${YELLOW}$(hyperlink "$GITHUB_STATUS_URL")${RESET}"
-  exit 1
-fi
 
 # Check Curl #
 if ! [ -x "$(command -v curl)" ]; then
