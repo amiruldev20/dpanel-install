@@ -15,6 +15,13 @@ hyperlink() {
 YELLOW="\033[1;33m"
 RESET="\e[0m"
 RED='\033[0;31m'
+o='\033[0m'
+r='\033[1;31m'
+b='\033[1;36m'
+bx='\033[2;7;36m'
+w='\033[1;37m'
+y='\033[1;33m'
+g='\033[1;32m'
 
 error() {
   echo ""
@@ -40,11 +47,9 @@ done=false
 
 echo
 print_brake 70
-echo "* DPANEL INSTALLER @ $SCRIPT_VERSION"
+echo -e "${g}CR DPANEL INSTALLER"
 echo
-echo "* Copyright (C) $(date +%Y), Amirul Dev"
-echo "* Follow IG @amirul.dev"
-echo
+echo -e "${y}Beta Version"
 
 Backup() {
 bash <(curl -s https://raw.githubusercontent.com/Ferks-FK/Pterodactyl-AutoThemes/"${SCRIPT_VERSION}"/backup.sh)
