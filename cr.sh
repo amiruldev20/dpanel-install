@@ -46,7 +46,7 @@ exit 1
 done=false
 
 echo
-print_brake 70
+print_brake 50
 echo -e "${g}CR DPANEL INSTALLER"
 echo
 echo -e "${y}Beta Version"
@@ -62,9 +62,8 @@ bash <(curl -s https://raw.githubusercontent.com/amiruldev20/dpanel-install/buil
 
 while [ "$done" == false ]; do
   options=(
-    "Restore Panel Backup (Restore your panel if you have problems or want to remove themes)"
-    "Install Dpanel"
-    
+    "Install CR Dpanel"
+    "Start Run Domain"
     
     "Cancel Installation"
   )
@@ -76,7 +75,7 @@ while [ "$done" == false ]; do
     "cancel"
   )
   
-  echo "* Which theme do you want to install?"
+  echo "Silahkan pilih yang anda inginkan!!"
   echo
   
   for i in "${!options[@]}"; do
