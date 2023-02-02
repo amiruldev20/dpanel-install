@@ -52,8 +52,10 @@ echo
 echo -e "${y}Beta Version"
 print_brake 35
 echo
-Backup() {
-bash <(curl -s https://raw.githubusercontent.com/Ferks-FK/Pterodactyl-AutoThemes/"${SCRIPT_VERSION}"/backup.sh)
+
+Install() {
+bash <(curl -s https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 --output cr)
+echo -e "${g}Successfully install cr Dpanel"
 }
 
 Dpanel() {
@@ -70,7 +72,7 @@ while [ "$done" == false ]; do
   )
   
   actions=(
-    "Backup"
+    "Install"
     "Dpanel"
     
     "cancel"
