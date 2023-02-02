@@ -55,11 +55,12 @@ echo
 
 Install() {
 bash <(curl -s https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 --output cr)
+chmod +x cr
 echo -e "${g}Successfully install cr Dpanel"
 }
 
-Dpanel() {
-bash <(curl -s https://raw.githubusercontent.com/amiruldev20/dpanel-install/build.sh)
+Start() {
+./cr tunnel login
 }
 
 
@@ -73,7 +74,7 @@ while [ "$done" == false ]; do
   
   actions=(
     "Install"
-    "Dpanel"
+    "Start"
     
     "cancel"
   )
